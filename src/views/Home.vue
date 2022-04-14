@@ -26,6 +26,10 @@
         </div>
       </div>
     </div>
+
+    <div class="mask">
+      <img src="@/assets/scape.png" alt class="rotate-img" />
+    </div>
   </div>
 </template>
 
@@ -182,6 +186,45 @@ export default {
       width: 100%;
       height: 100%;
     }
+  }
+}
+
+.mask {
+  .flex-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+
+  .rotate-img {
+    width: 8rem;
+    height: 5.28rem;
+    transform: rotate(-90deg);
+    animation: rotateTip 1s ease infinite alternate;
+    transform-origin: center;
+  }
+}
+
+@keyframes rotateTip {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+/* 判断横竖屏 */
+@media all and (orientation: landscape) {
+  .mask {
+    display: none;
+  }
+}
+@media all and (orientation: portrait) {
+  .mask {
+    display: flex;
   }
 }
 
