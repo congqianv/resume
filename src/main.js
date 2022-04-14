@@ -4,7 +4,11 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-new Vue({
+const app = new Vue({
   router,
   render: h => h(App)
-}).$mount('#app')
+})
+
+setTimeout(() => {
+  app.$mount('#app')
+}, 2000);

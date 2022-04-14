@@ -68,6 +68,26 @@ export default {
     })
     console.log(testGet)
     console.log(testPost)
+  },
+
+  methods: {
+    // 获取navList
+    async getNavList () {
+      const res = await cusAjax({
+        url: 'MOCKNAVLIST',
+        method: 'GET'
+      })
+      this.navList = res.list
+    },
+
+    // 获取人物列表
+    async getCharacters () {
+      const res = await cusAjax({
+        url: 'MOCKCHARACTERLIST',
+        method: 'GET'
+      })
+      this.characterList = res.list
+    },
   }
 }
 </script>
